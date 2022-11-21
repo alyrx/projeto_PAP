@@ -18,8 +18,8 @@
 
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Example Card</h5>
-                        <p>This is an examle page with no contrnt. You can use it as a starter for your custom pages.</p>
+                        <h5 class="card-title">Teste User</h5>
+                        <p><a href="{{route('user.teste')}}">Aqui</a></p>
                     </div>
                 </div>
 
@@ -29,8 +29,8 @@
 
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Example Card</h5>
-                        <p>This is an examle page with no contrnt. You can use it as a starter for your custom pages.</p>
+                        <h5 class="card-title">Teste Admin</h5>
+                        <p><a href="{{route('adm.teste')}}">Aqui</a></p>
                     </div>
                 </div>
 

@@ -17,8 +17,20 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::group(['middleware' => ['auth']], function() {
+    Route::get('/teste/user', function() {
+        return view('teste.user');
+    })->name('user.teste');
+
+    Route::get('/index', function () {
+        return view('index');
+    })->name('dashboard');
+});
+
+Route::group(['middleware' => ['admin']], function() {
+    Route::get('/teste/admin', function() {
+        return view('teste.admin');
+    })->name('adm.teste');
+});
 
 require __DIR__.'/auth.php';
