@@ -22,8 +22,8 @@ Route::group(['middleware' => ['auth']], function() {
         return view('teste.user');
     })->name('user.teste');
 
-    Route::get('/index', function () {
-        return view('index');
+    Route::get('/dashboard', function () {
+        return view('dashboard');
     })->name('dashboard');
 });
 
@@ -31,6 +31,12 @@ Route::group(['middleware' => ['admin']], function() {
     Route::get('/teste/admin', function() {
         return view('teste.admin');
     })->name('adm.teste');
+});
+
+Route::group(['middleware' => ['refeitorio']], function() {
+    Route::get('/teste/refeitorio', function() {
+        return view('teste.refeitorio');
+    })->name('refeitorio.teste');
 });
 
 require __DIR__.'/auth.php';

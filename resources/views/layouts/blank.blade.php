@@ -217,7 +217,6 @@
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
             <li class="dropdown-header">
               <h6>{{Auth::user()->name}}</h6>
-              <span>Web Designer</span>
             </li>
             <li>
               <hr class="dropdown-divider">
@@ -254,10 +253,13 @@
             </li>
 
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="#">
-                <i class="bi bi-box-arrow-right"></i>
-                <span>Sign Out</span>
-              </a>
+                <form method="POST" action="{{route('logout')}}">
+                    @csrf
+                    <button type="submit" class="dropdown-item d-flex align-items-center">
+                        <i class="bi bi-box-arrow-right"></i>
+                        <span>Sign Out</span>
+                    </button>
+                </form>
             </li>
 
           </ul><!-- End Profile Dropdown Items -->
