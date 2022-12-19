@@ -38,6 +38,15 @@
                     </div>
                 </div>
             </div>
+
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Chat</h5>
+                        <x-chat></x-chat>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 @endsection
