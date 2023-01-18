@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 Route::group(['middleware' => ['auth']], function() {
@@ -25,6 +25,10 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+
+    Route::get('/dashboard/horarios', function (){
+        return view('horarios');
+    })->name('horarios');
 });
 
 Route::group(['middleware' => ['admin']], function() {
