@@ -35,6 +35,10 @@ Route::group(['middleware' => ['admin']], function() {
     Route::get('/teste/admin', function() {
         return view('teste.admin');
     })->name('adm.teste');
+
+    Route::get('/dashboard/admin/horarios', function() {
+        return view('admin.horarios');
+    })->name('horarios.admin');
 });
 
 Route::group(['middleware' => ['refeitorio']], function() {
