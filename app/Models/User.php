@@ -55,4 +55,8 @@ class User extends Authenticatable
     public function horarios(){
         return $this->hasMany(Horario::class);
     }
+
+    public function marcacoes(){
+        return $this->hasMany(Marcacao::class);
+    }
 }

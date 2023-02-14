@@ -23,11 +23,11 @@ Route::group(['middleware' => ['auth']], function() {
     })->name('user.teste');
 
     Route::get('/dashboard', function () {
-        return view('dashboard');
+        return view('all.dashboard');
     })->name('dashboard');
 
     Route::get('/dashboard/horarios', function (){
-        return view('horarios');
+        return view('all.horarios');
     })->name('horarios');
 });
 

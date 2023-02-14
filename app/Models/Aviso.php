@@ -5,14 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Horario extends Model
+class Aviso extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'data',
-        'user_id',
-        'h_entrada',
-        'h_saida',
+        'titulo',
+        'aviso',
+        'ativo',
     ];
 }
