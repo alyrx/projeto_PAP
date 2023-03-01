@@ -23,6 +23,13 @@
                     <i class="bi bi-calendar"></i>
                     <span>Horários (Admin)</span>
                 </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link @if(Route::currentRouteName() === 'avisos.admin') @else collapsed @endif" href="{{ route('avisos.admin') }}">
+                    <i class="bi bi-exclamation-diamond"></i>
+                    <span>Avisos</span>
+                </a>
             </li><!-- End Dashboard Nav -->
         @endif
     </ul>

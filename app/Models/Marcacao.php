@@ -10,6 +10,8 @@ class Marcacao extends Model
     use HasFactory;
 
     protected $fillable = [
+        'user_id',
+        'ementa_id',
         'prato',
         'sobremesa',
     ];

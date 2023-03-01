@@ -15,4 +15,8 @@ class Horario extends Model
         'h_entrada',
         'h_saida',
     ];
+
+    public function user() {
+        return $this->belongsTo(User::class);
+    }
 }

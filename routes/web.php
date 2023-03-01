@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AvisoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,11 +15,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('auth.login');
-});
+    return view('all.index');
+})->name('index');
 
 Route::group(['middleware' => ['auth']], function() {
-    Route::get('/teste/user', function() {
+    Route::get('/dashboard/user/test', function() {
         return view('teste.user');
     })->name('user.teste');
 
@@ -29,20 +30,25 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/dashboard/horarios', function (){
         return view('all.horarios');
     })->name('horarios');
+
 });
 
 Route::group(['middleware' => ['admin']], function() {
-    Route::get('/teste/admin', function() {
+    Route::get('/dashboard/admin/test', function() {
         return view('teste.admin');
     })->name('adm.teste');
 
     Route::get('/dashboard/admin/horarios', function() {
         return view('admin.horarios');
     })->name('horarios.admin');
+
+    Route::get('/dashboard/admin/avisos', function(){
+        return view('admin.avisos');
+    })->name('avisos.admin');
 });
 
 Route::group(['middleware' => ['refeitorio']], function() {
-    Route::get('/teste/refeitorio', function() {
+    Route::get('/dashboard/refeitorio/test', function() {
         return view('teste.refeitorio');
     })->name('refeitorio.teste');
 });

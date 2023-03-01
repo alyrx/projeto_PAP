@@ -17,7 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('titulo');
             $table->string('aviso');
-            $table->boolean('ativo');
+            $table->string('imagem')->nullable();
+            $table->boolean('ativo')->default(false);
             $table->timestamps();
         });
     }

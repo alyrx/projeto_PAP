@@ -2,9 +2,9 @@
 <header id="header" class="header fixed-top d-flex align-items-center">
 
     <div class="d-flex align-items-center justify-content-between">
-        <a href="{{ route('dashboard') }}" class="logo d-flex align-items-center">
-            <img src="{{ asset('niceadmin/assets/img/logo.png') }}" alt="">
-            <span class="d-none d-lg-block">NiceAdmin</span>
+        <a href="{{ route('index') }}" class="logo d-flex align-items-center">
+            <img src="{{ asset('logopap_sm.png') }}" alt="DG_logo" class="pe-1">
+            <span class="d-none d-lg-block">Admin</span>
         </a>
         <i class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->

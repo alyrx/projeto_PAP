@@ -12,6 +12,7 @@ class Aviso extends Model
     protected $fillable = [
         'titulo',
         'aviso',
+        'imagem',
         'ativo',
     ];
 }

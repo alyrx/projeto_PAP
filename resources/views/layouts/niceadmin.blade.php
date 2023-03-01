@@ -10,7 +10,7 @@
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href={{ asset('assets/img/favicon.png') }} rel="icon">
+    <link href={{ asset('logopap_ico.png') }} rel="icon">
     <link href={{ asset('assets/img/apple-touch-icon.png') }} rel="apple-touch-icon">
 
     <!-- Google Fonts -->
@@ -30,6 +30,8 @@
 
     <!-- Template Main CSS File -->
     <link href={{ asset('niceadmin/assets/css/style.css') }} rel="stylesheet">
+
+    <link rel="stylesheet" href="{{asset('app.css')}}"  >
 
     @livewireStyles
 

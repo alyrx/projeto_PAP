@@ -1,16 +1,26 @@
 <x-guest-layout>
     <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
-        </x-slot>
+
 
         <!-- Session Status -->
         <x-auth-session-status class="mb-4" :status="session('status')" />
 
         <form method="POST" action="{{ route('login') }}">
             @csrf
+
+            <x-slot name="logo">
+                {{-- <a href="{{route('index')}}">
+                    <img src="{{asset('logopap_sm.png')}}" class="w-20 fill-current text-gray-500" />
+                    <span class="" style="font-size: 25px" >Admin</span>
+                </a> --}}
+            </x-slot>
+
+            <div style="display: flex; justify-content: center; align-items: center" class="my-5">
+                <a href="{{route('index')}}" class="">
+                    <img src="{{asset('logopap_sm.png')}}" alt="DG_logo" width="75px">
+                    <span style="font-size: 25px" >Admin</span>
+                </a>
+            </div>
 
             <!-- Email Address -->
             <div>
