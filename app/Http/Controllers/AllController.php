@@ -15,6 +15,7 @@ class AllController extends Controller
     public function index()
     {
         $avisos = Aviso::where('ativo', true);
-        return view('all.index', compact('avisos'));
+        $title = 'DG Admin | Welcome';
+        return view('all.index', compact('avisos', 'title'));
     }
 }

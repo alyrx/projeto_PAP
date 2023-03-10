@@ -5,7 +5,6 @@ namespace App\Http\Livewire\Avisos;
 use App\Models\Aviso;
 use Livewire\Component;
 use Livewire\WithFileUploads;
-use Illuminate\Support\Facades\Storage;
 
 class AdminAvisoCreate extends Component
 {
@@ -42,12 +41,12 @@ class AdminAvisoCreate extends Component
         $validatedData = $this->validate();
         if ($this->imagem) {
             $this->validate([
-                'imagem' => 'nullable|image|mimes:png,jpg'
+                'imagem' => 'sometimes|image'
             ]);
             $imgName = time() . '.' . $this->imagem->extension();
-            $this->imagem->storeAs('img/avisos', $imgName);
+            // $img->move(public_path('img\avisos'), $imgName);
+            $this->imagem->storeAs('img\avisos', $imgName, 'app_public');
             $validatedData['imagem'] = $imgName;
-            Storage::putFile('img/avisos', $imgName);
         }
         Aviso::create($validatedData);
         session()->flash('success', 'Aviso criado com sucesso');
