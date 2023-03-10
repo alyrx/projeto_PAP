@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\AvisoController;
+use App\Http\Controllers\AllController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,9 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('all.index');
-})->name('index');
+Route::get('/', [AllController::class, 'index'])->name('index');
 
 Route::group(['middleware' => ['auth']], function() {
     Route::get('/dashboard/user/test', function() {
@@ -24,11 +22,11 @@ Route::group(['middleware' => ['auth']], function() {
     })->name('user.teste');
 
     Route::get('/dashboard', function () {
-        return view('all.dashboard');
+        return view('all.dashboard', ['title' => 'DG Admin | Dashboard']);
     })->name('dashboard');
 
     Route::get('/dashboard/horarios', function (){
-        return view('all.horarios');
+        return view('all.horarios', ['title' => 'DG Admin | Horários']);
     })->name('horarios');
 
 });
@@ -39,11 +37,11 @@ Route::group(['middleware' => ['admin']], function() {
     })->name('adm.teste');
 
     Route::get('/dashboard/admin/horarios', function() {
-        return view('admin.horarios');
+        return view('admin.horarios', ['title' => 'DG Admin | Horários - Admin']);
     })->name('horarios.admin');
 
     Route::get('/dashboard/admin/avisos', function(){
-        return view('admin.avisos');
+        return view('admin.avisos', ['title' => 'DG Admin | Avisos']);
     })->name('avisos.admin');
 });
 

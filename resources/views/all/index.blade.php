@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>DG Admin</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="icon" href="{{asset('logopap_ico.png')}}">
@@ -44,15 +44,15 @@
 
     <div id="carouselExampleFade" class="carousel slide carousel-fade">
         <div class="carousel-inner">
+            @foreach ($avisos as $aviso)
             <div class="carousel-item active">
-                <img src="{{ asset('niceadmin/assets/img/grupos.png') }}" class="d-block w-100" alt="..." width="auto" height="750px">
+                <img src="{{ $ativo->imagem ? asset('niceadmin/assets/img/grupos.png') : asset('img/avisos/' . $aviso->imagem) }}" class="d-block w-100" alt="{{ $aviso->titulo }}" width="auto" height="750px">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>{{ $aviso->titulo }}</h5>
+                    <p>{{ $aviso->aviso }}</p>
+                </div>
             </div>
-            <div class="carousel-item">
-                <img src="..." class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-                <img src="..." class="d-block w-100" alt="...">
-            </div>
+            @endforeach
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade"
             data-bs-slide="prev">
@@ -72,7 +72,7 @@
 
     <footer class="bg-black py-3" style="color: #fff">
         <div class="text-center">
-           <!-- "" /*Este comentário é super importante*\ "" --> <p>&copy;EstaAplicaçãoTensOsSeusDireitosAutoriaisCaralho</p>
+           <!-- "" /*Este comentário é super importante*\ "" --> <p>&copy;2023, DG Admin</p>
         </div>
     </footer>
 
