@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AllController;
+use App\Http\Controllers\RefeicaoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,6 +30,8 @@ Route::group(['middleware' => ['auth']], function() {
         return view('all.horarios', ['title' => 'DG Admin | Horários']);
     })->name('horarios');
 
+    // Route::resource('/dashboard/refeicoes', RefeicaoController::class);
+    Route::get('/dashboard/refeicoes', 'App\Http\Controllers\RefeicaoController@index')->name('refeicoes.index');   
 });
 
 Route::group(['middleware' => ['admin']], function() {

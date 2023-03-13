@@ -15,6 +15,13 @@
             </a>
         </li>
 
+        <li class="nav-item">
+            <a class="nav-link @if(Route::currentRouteName() === 'refeicoes.index') @else collapsed @endif" href="{{ route('refeicoes.index') }}">
+                <i class="bi bi-cup-hot"></i>
+                <span>Refeições</span>
+            </a>
+        </li>
+
         @if (Auth::user()->utype === 'ADM')
             <li class="nav-heading">Admin</li>
 

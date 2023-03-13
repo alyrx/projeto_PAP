@@ -6,7 +6,7 @@
             <h1>Dashboard</h1>
             <nav>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Home</a></li>
+                    <li class="breadcrumb-item"><a href="{{route('dashboard')}}"><i class="bi bi-house"></i> Home</a></li>
                 </ol>
             </nav>
         </div><!-- End Page Title -->
@@ -22,7 +22,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-4">
+                {{-- <div class="col-lg-4">
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Teste Admin</h5>
@@ -38,7 +38,7 @@
                             <p><a class="btn btn-primary" href="{{ route('refeitorio.teste') }}">Aqui</a></p>
                         </div>
                     </div>
-                </div>
+                </div> --}}
 
 
                 {{-- <div class="col-lg-6">
