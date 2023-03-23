@@ -1,4 +1,9 @@
 <div>
+    @if (session()->has('success'))
+        <div class="alert alert-success">
+            {{session('success')}}
+        </div>
+    @endif
     @if ($isAdding)
         <div class="alert alert-primary" role="alert">
             <form class="row g-3" wire:submit.prevent='save' enctype="multipart/form-data">

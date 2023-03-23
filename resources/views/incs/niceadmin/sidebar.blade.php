@@ -8,6 +8,8 @@
             </a>
         </li>
 
+        <hr>
+
         <li class="nav-item">
             <a class="nav-link @if(Route::currentRouteName() === 'horarios') @else collapsed @endif" href="{{ route('horarios') }}">
                 <i class="bi bi-calendar"></i>
@@ -21,6 +23,8 @@
                 <span>Refeições</span>
             </a>
         </li>
+
+        <hr>
 
         @if (Auth::user()->utype === 'ADM')
             <li class="nav-heading">Admin</li>
@@ -37,7 +41,18 @@
                     <i class="bi bi-exclamation-diamond"></i>
                     <span>Avisos</span>
                 </a>
-            </li><!-- End Dashboard Nav -->
+            </li><!-- End Admin Dashboard Nav -->
+        @endif
+
+        @if (Auth::user()->utype === 'RFT')
+            <li class="nav-heading">Refeitório</li>
+
+            <li class="nav-item">
+                <a class="nav-link @if(Route::currentRouteName() === 'refeicoes.admin') @else collapsed @endif" href="{{route('refeicoes.admin')}}">
+                    <i class="bi bi-cup"></i>
+                    <span>Ementas</span>
+                </a>
+            </li><!-- End Refeitório Dashboard Nav -->
         @endif
     </ul>
 </aside><!-- End Sidebar-->

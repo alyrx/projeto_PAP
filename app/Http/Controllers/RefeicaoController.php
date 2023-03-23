@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Ementa;
 use Illuminate\Http\Request;
 
 class RefeicaoController extends Controller
@@ -13,8 +14,9 @@ class RefeicaoController extends Controller
      */
     public function index()
     {
-        $title = 'DG Admin | Refeiçoes';
-        return view('all.refeicoes', compact('title'));
+        $title = 'DG Admin | Ementas';
+        $ementas = Ementa::all();
+        return view('admin.refeicoes', compact('title', 'ementas'));
     }
 
     /**
@@ -24,7 +26,8 @@ class RefeicaoController extends Controller
      */
     public function create()
     {
-        //
+        $title = 'DG Admin | Ementas - Create';
+        return view('admin.refeicao.create', compact('title'));
     }
 
     /**
@@ -35,7 +38,8 @@ class RefeicaoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Ementa::create($request->all());
+        return redirect()->route('refeicoes.index');
     }
 
     /**

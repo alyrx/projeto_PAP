@@ -32,9 +32,9 @@
                 aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto my-2 my-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">Sobre nós</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Serviços</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Portofolio</a></li>
                     <li class="nav-item"><a href="{{ route('dashboard') }}" class="nav-link">Área Reservada</a></li>
                 </ul>
             </div>
@@ -45,7 +45,7 @@
         <div class="container px-4 px-lg-5 h-100">
             <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
                 <div class="col-lg-8 align-self-end">
-                    <h1 class="text-white font-weight-bold">Your Favorite WorkPlace</h1>
+                    <h1 class="text-white font-weight-bold">O teu local de trabalho preferido</h1>  
                     <hr class="divider" />
                 </div>
                 <div class="col-lg-8 align-self-baseline">
@@ -60,10 +60,10 @@
         <div class="container px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-lg-8 text-center">
-                    <h2 class="text-white mt-0">About us</h2>
+                    <h2 class="text-white mt-0">Sobre nós</h2>
                     <hr class="divider divider-light" />
                     <p class="text-white-75 mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique rem necessitatibus consequuntur sunt veritatis exercitationem aliquam, eaque dolores illum quas doloribus accusamus.</p>
-                    <a class="btn btn-light btn-xl" href="#services">Get Started!</a>
+                    <a class="btn btn-light btn-xl" href="#services">Vamos começar!</a>
                 </div>
             </div>
         </div>
@@ -71,7 +71,7 @@
     <!-- Services-->
     <section class="page-section" id="services">
         <div class="container px-4 px-lg-5">
-            <h2 class="text-center mt-0">At Your Service</h2>
+            <h2 class="text-center mt-0">Os nossos serviços</h2>
             <hr class="divider" />
             <div class="row gx-4 gx-lg-5">
                 <div class="col-lg-3 col-md-6 text-center">

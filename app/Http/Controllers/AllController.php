@@ -14,8 +14,16 @@ class AllController extends Controller
      */
     public function index()
     {
-        $avisos = Aviso::where('ativo', true);
         $title = 'DG Admin | Welcome';
-        return view('all.index', compact('avisos', 'title'));
+        return view('all.index', compact('title'));
+    }
+
+    public function dashboard()
+    {
+        $title = 'DG Admin | Dashboard';
+        $i = 0;
+        $avisos = Aviso::all()->where('ativo', true);
+        $avisoCount = Aviso::all()->where('ativo', true)->count() - 1;
+        return view('all.dashboard', compact('avisos', 'title', 'i', 'avisoCount'));
     }
 }
