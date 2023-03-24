@@ -3,8 +3,7 @@
         <h1>Refeições</h1>
         <nav>
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="{{ route('dashboard') }}"><i class="bi bi-house"></i> Home</a> /
-                    Refeições</li>
+                <li class="breadcrumb-item"><a href="{{ route('dashboard') }}"><i class="bi bi-house"></i> Home</a> / Refeições</li>
             </ol>
         </nav>
     </div><!-- End Page Title -->
@@ -12,9 +11,15 @@
     <section class="section">
         <div class="row">
             <div class="@if(!$isReserving) col-lg-12 @else col-lg-4 @endif">
+
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Ementas</h5>
+                        <h5 class="card-title">Ementas <span><a href="{{route('marcacoes.index')}}" class="btn btn-sm btn-secondary float-end">Marcações Efetuadas</a></span></h5>
+                            @if (session()->has('success'))
+                                <div class="alert alert-success">
+                                    {{ session('success') }}
+                                </div>
+                            @endif
                         <div class="accordion" id="accordionExample">
                             <?php $i = 1?>
                             @forelse ($ementas as $ementa)
@@ -31,12 +36,16 @@
                                             <table class="table table-sm mt-1">
                                                 <tbody>
                                                     <tr><td><strong>Sopa:</strong> {{$ementa->sopa}}</td></tr>
-                                                    <tr><td><strong>Prato Carne:</strong> {{$ementa->pratocarne}}<br><strong>Prato Peixe:</strong> {{$ementa->pratopeixe}}<br><strong>Prato Vegetariano:</strong> {{$ementa->pratovegetariano}}</td></tr>
+                                                    <tr><td>
+                                                        <strong>Prato Carne:</strong> {{$ementa->pratocarne}}<br>
+                                                        <strong>Prato Peixe:</strong> {{$ementa->pratopeixe}}<br>
+                                                        <strong>Prato Vegetariano:</strong> {{$ementa->pratovegetariano}}
+                                                    </td></tr>
                                                     <tr><td><strong>Sobremesa:</strong> {{$ementa->sobremesa}}</td></tr>
                                                     <tr><td><strong>Fruta:</strong> {{$ementa->fruta}}</td></tr>
                                                 </tbody>
                                             </table>
-                                            <a wire:click.prevent="confirmarMarcacaoEmenta({{$ementa->id}}, {{Auth::user()->id}})" class="btn btn-outline-primary float-end">Marcar Refeição</a>
+                                            <a wire:click.prevent="confirmarMarcacaoEmenta({{$ementa->id}}, {{Auth::user()->id}})" class="btn btn-outline-primary float-end @if($isReserving) disabled @endif">Marcar Refeição</a>
                                         </div>
                                     </div>
                                 </div>
@@ -55,7 +64,7 @@
                             <h5 class="card-title">Marcação</h5>
                             <div class="alert alert-info">
                                 <h5>Confirmar Marcação</h5>
-                                <form class="row g-3">
+                                <form class="row g-3" wire:submit.prevent="marcarEmenta" method="post">
                                     @csrf
                                     <div class="form-floating">
                                         <input type="date" class="form-control" id="floatData"
@@ -70,6 +79,25 @@
                                     </div>
 
                                     <div class="form-floating">
+                                        <select class="form-select" id="floatPrato" wire:model='pratoEscolhido'>
+                                          <option selected>Escolha o prato...</option>
+                                          <option value="C">Prato Carne: {{$pratocarne}}</option>
+                                          <option value="P">Prato Peixe: {{$pratopeixe}}</option>
+                                          <option value="V">Prato Vegetariano: {{$pratovegetariano}}</option>
+                                        </select>
+                                        <label for="floatPrato">Prato</label>
+                                      </div>
+
+                                    <div class="form-floating">
+                                        <select class="form-select" id="floatSobremesa" wire:model="sobremesaEscolhida">
+                                          <option selected>Escolha a sobremesa...</option>
+                                          <option value="S">{{$sobremesa}}</option>
+                                          <option value="F">{{$fruta}}</option>
+                                        </select>
+                                        <label for="floatSobremesa">Sobremesa</label>
+                                      </div>
+
+                                    {{-- <div class="form-floating">
                                         <input type="text" class="form-control" id="floatSobremesa"
                                             placeholder="Sobremesa" wire:model='sobremesa' disabled>
                                         <label for="floatSobremesa">Sobremesa</label>
@@ -79,7 +107,7 @@
                                         <input type="text" class="form-control" id="floatFruta"
                                             placeholder="Fruta" wire:model='fruta' disabled>
                                         <label for="floatFruta">Fruta</label>
-                                    </div>
+                                    </div> --}}
 
                                     <div class="d-flex flex-row justify-content-between">
                                         <button type="cancel" wire:click.prevent="resetInput" class="btn btn-secondary">Cancelar</button>

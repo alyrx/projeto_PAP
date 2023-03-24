@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AllController;
+use App\Http\Controllers\MarcacaoController;
 use App\Http\Controllers\RefeicaoController;
 use Illuminate\Support\Facades\Route;
 
@@ -31,6 +32,8 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/dashboard/refeicoes/', function () {
         return view('all.refeicoes', ['title' => 'DG Admin | Refeições']);
     })->name('refeicoes.index');
+
+    Route::resource('/dashboard/refeicoes/marcacoes', MarcacaoController::class);
 });
 
 Route::group(['middleware' => ['admin']], function() {

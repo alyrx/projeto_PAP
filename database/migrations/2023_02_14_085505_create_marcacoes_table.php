@@ -13,10 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('marcacoes', function (Blueprint $table) {
+        Schema::create('marcacaos', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained('users');
-            $table->foreignId('ementa_id')->constrained('ementas');
+            $table->foreignId('user_id');
+            $table->foreignId('ementa_id');
             $table->enum('prato', ['C', 'P', 'V']);
             $table->enum('sobremesa', ['S', 'F']);
             $table->timestamps();
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('marcacoes');
+        Schema::dropIfExists('marcacaos');
     }
 };
