@@ -24,7 +24,7 @@
 
                 <div class="col-md-6 mb-2">
                     <div class="form-floating">
-                        <input type="text" class="form-control" id="floatAviso" placeholder="Aviso" wire:model='aviso'>
+                        <textarea id="floatAviso" cols="30" rows="10" class="form-control" wire:model="aviso"></textarea>
                         <label for="floatAviso">Descrição do Aviso</label>
                     </div>
                     @error('aviso')

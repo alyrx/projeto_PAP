@@ -18,7 +18,9 @@ class RefeicaoController extends Controller
     {
         $title = 'DG Admin | Ementas';
         $ementas = Ementa::all();
-        return view('admin.refeicoes', compact('title', 'ementas'));
+        $marcacoes = Marcacao::all();
+        $marcacoesCount = Marcacao::all()->count();
+        return view('admin.refeicoes', compact('title', 'ementas', 'marcacoes', 'marcacoesCount'));
     }
 
     /**
@@ -41,7 +43,7 @@ class RefeicaoController extends Controller
     public function store(Request $request)
     {
         Ementa::create($request->all());
-        return redirect()->route('refeicoes.index');
+        return redirect()->route('refeicoes.admin');
     }
 
     /**

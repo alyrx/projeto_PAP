@@ -45,7 +45,13 @@
                                                     <tr><td><strong>Fruta:</strong> {{$ementa->fruta}}</td></tr>
                                                 </tbody>
                                             </table>
-                                            <a wire:click.prevent="confirmarMarcacaoEmenta({{$ementa->id}}, {{Auth::user()->id}})" class="btn btn-outline-primary float-end @if($isReserving) disabled @endif">Marcar Refeição</a>
+                                            @foreach ($marcacoes as $marcacao)
+                                                @if ($marcacao->user_id === Auth::user()->id && $marcacao->ementa_id === $ementa->id)
+                                                    <a wire:click.prevent="confirmarMarcacaoEmenta({{$ementa->id}}, {{Auth::user()->id}})" class="btn btn-outline-primary float-end disabled">Marcar Refeição</a>
+                                                @else
+                                                    <a wire:click.prevent="confirmarMarcacaoEmenta({{$ementa->id}}, {{Auth::user()->id}})" class="btn btn-outline-primary float-end @if($isReserving) disabled @endif">Marcar Refeição</a>
+                                                @endif
+                                            @endforeach
                                         </div>
                                     </div>
                                 </div>

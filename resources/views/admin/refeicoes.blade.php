@@ -2,6 +2,40 @@
 
 {{-- @include('livewire.refeicao.marcacao-index') --}}
 @section('content')
+
+<?php
+    function marcacaoCount($array, $ementa_id){
+        $c = 0;
+        foreach ($array as $marcacao) {
+            if ($marcacao->ementa_id === $ementa_id) {
+                $c += 1;
+            }
+        }
+        return $c;
+    }
+
+    function marcPratoCount($array, $ementa_id, $escPrato)
+    {
+        $c = 0;
+        foreach ($array as $marcacao) {
+            if ($marcacao->ementa_id === $ementa_id && $marcacao->prato === $escPrato) {
+                $c += 1;
+            }
+        }
+        return $c;
+    }
+
+    function marcSobremesaCount($array, $ementa_id, $escSobremesa)
+    {
+        $c = 0;
+        foreach ($array as $marcacao) {
+            if ($marcacao->ementa_id === $ementa_id && $marcacao->sobremesa === $escSobremesa) {
+                $c += 1;
+            }
+        }
+        return $c;
+    }
+?>
     <main id="main" class="main">
         <div class="pagetitle">
             <h1>Refeições</h1>
@@ -30,8 +64,8 @@
                                     <div class="accordion-item">
                                         <h2 class="accordion-header" id="heading<?php echo $i?>">
                                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                                data-bs-target="#collapse<?php echo $i?>" aria-expanded="true" aria-controls="collapse<?php echo $i?>">
-                                                {{ date('d/m/Y', strtotime($ementa->data)) }}
+                                                data-bs-target="#collapse<?php echo $i?>" aria-expanded="true" aria-controls="collapse<?php echo $i?>"> {{-- {{$marcacoes->where('ementa_id' === $ementa->id)}} --}}
+                                                {{ date('d/m/Y', strtotime($ementa->data)) }} | <?php echo 'Total Marcações: ' . marcacaoCount($marcacoes, $ementa->id);?>
                                             </button>
                                         </h2>
                                         <div id="collapse<?php echo $i?>" class="accordion-collapse collapse"
@@ -39,10 +73,24 @@
                                             <div class="accordion-body mb-4 pb-4">
                                                 <table class="table table-sm mt-1">
                                                     <tbody>
-                                                        <tr><td><strong>Sopa:</strong> {{$ementa->sopa}}</td></tr>
-                                                        <tr><td><strong>Prato Carne:</strong> {{$ementa->pratocarne}}<br><strong>Prato Peixe:</strong> {{$ementa->pratopeixe}}<br><strong>Prato Vegetariano:</strong> {{$ementa->pratovegetariano}}</td></tr>
-                                                        <tr><td><strong>Sobremesa:</strong> {{$ementa->sobremesa}}</td></tr>
-                                                        <tr><td><strong>Fruta:</strong> {{$ementa->fruta}}</td></tr>
+                                                        <tr>
+                                                            <td>
+                                                                <?php echo 'Pedidos: ' . marcacaoCount($marcacoes, $ementa->id);?> | <strong>Sopa:</strong> {{$ementa->sopa}}
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <?php echo 'Pedidos: ' . marcPratocount($marcacoes, $ementa->id, 'C') ?> | <strong>Prato Carne:</strong> {{$ementa->pratocarne}}<br>
+                                                                <?php echo 'Pedidos: ' . marcPratocount($marcacoes, $ementa->id, 'P') ?> | <strong>Prato Peixe:</strong> {{$ementa->pratopeixe}}<br>
+                                                                <?php echo 'Pedidos: ' . marcPratocount($marcacoes, $ementa->id, 'V') ?> | <strong>Prato Vegetariano:</strong> {{$ementa->pratovegetariano}}
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <?php echo 'Pedidos: ' . marcSobremesaCount($marcacoes, $ementa->id, 'S') ?> | <strong>Sobremesa:</strong> {{$ementa->sobremesa}}<br>
+                                                                <?php echo 'Pedidos: ' . marcSobremesaCount($marcacoes, $ementa->id, 'F') ?> | <strong>Fruta:</strong> {{$ementa->fruta}}
+                                                            </td>
+                                                        </tr>
                                                     </tbody>
                                                 </table>
                                                 <div class="float-end">

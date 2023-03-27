@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Refeicao;
 
 use App\Models\Ementa;
 use App\Models\Marcacao;
+use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
 class Ementas extends Component
@@ -46,7 +47,8 @@ class Ementas extends Component
     public function render()
     {
         $ementas = Ementa::orderBy('data', 'ASC')->get();
-        return view('livewire.refeicao.ementas', compact('ementas'));
+        $marcacoes = Marcacao::all()->where('user_id' === Auth::user()->id);
+        return view('livewire.refeicao.ementas', compact('ementas', 'marcacoes'));
     }
 
     public function confirmarMarcacaoEmenta($eid, $uid)

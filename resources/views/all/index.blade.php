@@ -34,7 +34,7 @@
                 <ul class="navbar-nav ms-auto my-2 my-lg-0">
                     <li class="nav-item"><a class="nav-link" href="#about">Sobre nós</a></li>
                     <li class="nav-item"><a class="nav-link" href="#services">Serviços</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#services">Portofolio</a></li>
+                    {{-- <li class="nav-item"><a class="nav-link" href="#services">Portofolio</a></li> --}}
                     <li class="nav-item"><a href="{{ route('dashboard') }}" class="nav-link">Área Reservada</a></li>
                 </ul>
             </div>
@@ -45,12 +45,12 @@
         <div class="container px-4 px-lg-5 h-100">
             <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
                 <div class="col-lg-8 align-self-end">
-                    <h1 class="text-white font-weight-bold">O teu local de trabalho preferido</h1>  
+                    <h1 class="text-white font-weight-bold">O teu local de trabalho preferido</h1>
                     <hr class="divider" />
                 </div>
                 <div class="col-lg-8 align-self-baseline">
                     <p class="text-white-75 mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto ipsam neque distinctio? Consequatur iusto natus ut iure unde, sint quisquam nisi id fugit corrupti, deserunt, illum sit et magni rerum alias placeat dolorum suscipit beatae!</p>
-                    <a class="btn btn-primary btn-xl" href="#about">Find Out More</a>
+                    <a class="btn btn-primary btn-xl" href="#about">Sobre nós</a>
                 </div>
             </div>
         </div>
@@ -105,47 +105,11 @@
             </div>
         </div>
     </section>
-    <!-- Portfolio-->
-    <div id="portfolio">
-        @auth
-            <div class="container">
-                <div class="row g-0 d-flex justify-content-center">
-                    <div class="card mb-4 me-2" style="width: 16rem;">
-                        <img src="{{asset('img/avisos/1678470392.png')}}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Refeitório</h5>
-                            <a href="#" class="btn btn-primary d-flex"><span>Entrar</span></a>
-                        </div>
-                    </div>
-                    <div class="card mb-4 me-2" style="width: 16rem;">
-                        <img src="{{asset('img/avisos/1678470392.png')}}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Horários</h5>
-                            <a href="#" class="btn btn-primary d-flex"><span>Entrar</span></a>
-                        </div>
-                    </div>
-                    <div class="card mb-4 me-2" style="width: 16rem;">
-                        <img src="{{asset('img/avisos/1678470392.png')}}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Avisos</h5>
-                            <a href="#" class="btn btn-primary d-flex"><span>Entrar</span></a>
-                        </div>
-                    </div>
-                    <div class="card mb-4 me-2" style="width: 16rem;">
-                        <img src="{{asset('img/avisos/1678470392.png')}}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Chat</h5>
-                            <a href="#" class="btn btn-primary d-flex"><span>Entrar</span></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        @endauth
-    </div>
     <!-- Footer-->
     <footer class="p-3 mb-2 bg-secondary text-white">
         <div class="container px-4 px-lg-5">
-            <div class="small text-center">Copyright &copy; 2022 - Company Name</div>
+            <div class="small text-center">Copyright &copy; 2023 - DG Admin</div>
+            <div class="small text-center">Designed by <a href="https://startbootstrap.com/" style="">Start Bootstrap</a>. Modified by DG Admin</div>
         </div>
     </footer>
     <!-- Bootstrap core JS-->

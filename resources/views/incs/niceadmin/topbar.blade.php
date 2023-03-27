@@ -181,7 +181,7 @@
                     <li>
                         <hr class="dropdown-divider">
                     </li>
-
+{{--
                     <li>
                         <a class="dropdown-item d-flex align-items-center" href="#">
                             <i class="bi bi-gear"></i>
@@ -191,7 +191,7 @@
 
                     <li>
                         <hr class="dropdown-divider">
-                    </li>
+                    </li> --}}
 
                     <li>
                         <form method="POST" action="{{ route('logout') }}">

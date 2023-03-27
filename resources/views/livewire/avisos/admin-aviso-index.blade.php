@@ -41,8 +41,9 @@
 
                                     <div class="col-md-6 mb-2">
                                         <div class="form-floating">
-                                            <input type="text" class="form-control" id="floatAviso"
-                                                placeholder="Aviso" wire:model='aviso'>
+                                            <textarea id="floatAviso" cols="30" rows="10" class="form-control" wire:model="aviso"></textarea>
+                                            {{-- <input type="text" class="form-control" id="floatAviso"
+                                                placeholder="Aviso" wire:model='aviso'> --}}
                                             <label for="floatAviso">Descrição do Aviso</label>
                                         </div>
                                         @error('aviso')
@@ -101,8 +102,7 @@
 
                                     <div class="col-md-6 mb-2">
                                         <div class="form-floating">
-                                            <input type="text" class="form-control" id="floatAviso"
-                                                placeholder="Aviso" wire:model='aviso' disabled>
+                                            <textarea id="floatAviso" cols="30" rows="10" class="form-control" wire:model="aviso" disabled></textarea>
                                             <label for="floatAviso">Descrição do Aviso</label>
                                         </div>
                                         @error('aviso')
@@ -113,10 +113,12 @@
                                         @enderror
                                     </div>
 
-                                    <div class="mb-2">
-                                        <label for="imgAviso">Imagem do Aviso</label>
-                                        <img id="imgAviso" src='{{asset('img/avisos/' . $imagem)}}' alt="Imagem do Aviso" class="w-25 form-control">
-                                    </div>
+                                    @if ($imagem)
+                                        <div class="mb-2">
+                                            <label for="imgAviso">Imagem do Aviso</label>
+                                            <img id="imgAviso" src='{{asset('img/avisos/' . $imagem)}}' alt="Imagem do Aviso" class="w-25 form-control">
+                                        </div>
+                                    @endif
 
                                     {{-- <div class="col-md-12 mb-2">
                                         <div class="form-group">
