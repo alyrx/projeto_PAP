@@ -97,8 +97,8 @@
                 <div class="col-lg-4">
                     <div class="card">
                         <div class="card-body">
-                            {{-- <h5 class="card-title">Teste Admin</h5> --}}
-                            {{-- <p><a class="btn btn-primary" href="{{ route('adm.teste') }}">Aqui</a></p> --}}
+                            <h5 class="card-title">Teste Admin</h5>
+                            <p>{{}}</p>
                         </div>
                     </div>
                 </div>

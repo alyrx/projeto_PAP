@@ -54,7 +54,11 @@
                                         @endswitch
                                         <td>
                                             {{-- <a href="#" class="btn btn-sm btn-warning"><i class="bi bi-pencil"></i> Alterar</a> --}}
-                                            <a href="#" class="btn btn-sm btn-danger"><i class="bi bi-trash"></i> Cancelar</a>
+                                            <form action="{{route('marcacoes.destroy', $marcacao->id)}}" method="POST">
+                                                @method('delete')
+                                                @csrf
+                                                <button type="submit" class="btn btn-sm btn-danger"><i class="bi bi-trash"></i> Cancelar</button>
+                                            </form>
                                         </td>
                                     </tr>
                                 @empty
