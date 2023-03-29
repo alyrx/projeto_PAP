@@ -17,7 +17,7 @@ class RefeicaoController extends Controller
     public function index()
     {
         $title = 'DG Admin | Ementas';
-        $ementas = Ementa::all();
+        $ementas = Ementa::orderBy('data', 'ASC')->get();
         $marcacoes = Marcacao::all();
         $marcacoesCount = Marcacao::all()->count();
         return view('admin.refeicoes', compact('title', 'ementas', 'marcacoes', 'marcacoesCount'));

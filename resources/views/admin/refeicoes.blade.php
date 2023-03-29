@@ -38,11 +38,10 @@
 ?>
     <main id="main" class="main">
         <div class="pagetitle">
-            <h1>Refeições</h1>
+            <h1>Ementas</h1>
             <nav>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="{{ route('dashboard') }}"><i class="bi bi-house"></i> Home</a> /
-                        Refeições</li>
+                    <li class="breadcrumb-item"><a href="{{ route('dashboard') }}"><i class="bi bi-house"></i> Home</a> / Admin / Ementas</li>
                 </ol>
             </nav>
         </div><!-- End Page Title -->

@@ -21,7 +21,7 @@ class AdminAvisoIndex extends Component
 
     protected $rules = [
         'titulo' => 'required|string|max:255',
-        'aviso' => 'required|string|max:255',
+        'aviso' => 'required|string',
     ];
 
     protected $listeners = [

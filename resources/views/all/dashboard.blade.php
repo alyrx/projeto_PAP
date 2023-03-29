@@ -12,7 +12,7 @@
         </div><!-- End Page Title -->
 
         <section class="section">
-            <div class="row">
+            <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="card">
                         {{-- <div class="card-body"> --}}
@@ -44,9 +44,9 @@
                                             <img src="{{ asset('img-notfound.jpg') }}" class="d-block w-100"
                                                 alt="{{ $aviso->titulo }}" style="border-radius: 5px">
                                         @endif
-                                        <div class="carousel-caption d-md-block">
+                                        <div class="carousel-caption d-md-block" style="background-color: rgba(22, 22, 22, 0.39); border-radius: 5px;">
                                             <h5>{{ $aviso->titulo }}</h5>
-                                            <p class="text-nowrap" style="overflow:hidden">{{ $aviso->aviso }}</p>
+                                            <p style="overflow: hidden;">{{ $aviso->aviso }}</p>
                                         </div>
                                     </div>
                                     <?php $i++; ?>
@@ -94,14 +94,14 @@
                     </div>
                 </div>
 
-                <div class="col-lg-4">
+                {{-- <div class="col-lg-4">
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Teste Admin</h5>
                             <p>{{}}</p>
                         </div>
                     </div>
-                </div>
+                </div> --}}
 
                 {{-- <div class="col-lg-4">
                     <div class="card">

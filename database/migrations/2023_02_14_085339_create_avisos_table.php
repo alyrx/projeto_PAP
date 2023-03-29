@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('avisos', function (Blueprint $table) {
             $table->id();
             $table->string('titulo');
-            $table->string('aviso');
+            $table->text('aviso');
             $table->string('imagem')->nullable();
             $table->boolean('ativo')->default(false);
             $table->timestamps();
