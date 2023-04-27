@@ -42,8 +42,6 @@
                                     <div class="col-md-6 mb-2">
                                         <div class="form-floating">
                                             <textarea id="floatAviso" cols="30" rows="10" class="form-control" wire:model="aviso"></textarea>
-                                            {{-- <input type="text" class="form-control" id="floatAviso"
-                                                placeholder="Aviso" wire:model='aviso'> --}}
                                             <label for="floatAviso">Descrição do Aviso</label>
                                         </div>
                                         @error('aviso')
@@ -67,12 +65,6 @@
                                             </div>
                                         @enderror
                                     </div>
-
-                                    {{-- <div class="col-md-12 mb-2">
-                                            <div class="form-floating">
-                                                <input type="file" class="form-control" id="floatImagem" placeholder="Imagem">
-                                            </div>
-                                        </div> --}}
 
                                     <div class="d-flex flex-row justify-content-between">
                                         <button type="cancel" class="btn btn-secondary mr-2"
@@ -119,20 +111,6 @@
                                             <img id="imgAviso" src='{{asset('img/avisos/' . $imagem)}}' alt="Imagem do Aviso" class="w-25 form-control">
                                         </div>
                                     @endif
-
-                                    {{-- <div class="col-md-12 mb-2">
-                                        <div class="form-group">
-                                            <label for="floatImagem">Imagem do Aviso</label>
-                                            <input type="file" class="form-control" id="floatImagem"
-                                                placeholder="Imagem" wire:model='imagem' disabled>
-                                        </div>
-                                        @error('imagem')
-                                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                                <i class="bi bi-exclamation-octagon me-1"></i>
-                                                {{ $message }}
-                                            </div>
-                                        @enderror
-                                    </div> --}}
 
                                     <div class="d-flex flex-row justify-content-between">
                                         <button type="cancel" class="btn btn-secondary mr-2"

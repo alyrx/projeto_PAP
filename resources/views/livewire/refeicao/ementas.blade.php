@@ -97,18 +97,6 @@
                                         <label for="floatSobremesa">Sobremesa</label>
                                       </div>
 
-                                    {{-- <div class="form-floating">
-                                        <input type="text" class="form-control" id="floatSobremesa"
-                                            placeholder="Sobremesa" wire:model='sobremesa' disabled>
-                                        <label for="floatSobremesa">Sobremesa</label>
-                                    </div>
-
-                                    <div class="form-floating">
-                                        <input type="text" class="form-control" id="floatFruta"
-                                            placeholder="Fruta" wire:model='fruta' disabled>
-                                        <label for="floatFruta">Fruta</label>
-                                    </div> --}}
-
                                     <div class="d-flex flex-row justify-content-between">
                                         <button type="cancel" wire:click.prevent="resetInput" class="btn btn-secondary">Cancelar</button>
                                         <button type="submit" class="btn btn-primary">Confirmar</button>

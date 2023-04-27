@@ -70,6 +70,9 @@ class Ementas extends Component
     public function marcarEmenta()
     {
         $validatedData = $this->validate();
+        // dd($validatedData);
+        $validatedData['prato'] = $this->pratoEscolhido;
+        $validatedData['sobremesa'] = $this->sobremesaEscolhida;
         $validatedData['user_id'] = $this->user_id;
         $validatedData['ementa_id'] = $this->ementa_id;
 

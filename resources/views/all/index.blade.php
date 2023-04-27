@@ -45,7 +45,7 @@
         <div class="container px-4 px-lg-5 h-100">
             <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
                 <div class="col-lg-8 align-self-end">
-                    <h1 class="text-white font-weight-bold">O teu local de trabalho preferido</h1>
+                    <h1 class="text-white font-weight-bold">O lugar de trabalho perfeito</h1>
                     <hr class="divider" />
                 </div>
                 <div class="col-lg-8 align-self-baseline">
@@ -124,9 +124,9 @@
     <!-- Footer-->
     <footer class="p-3 mb-2 bg-secondary text-white">
         <div class="container px-4 px-lg-5">
-            <div class="small text-center">Copyright &copy; 2023 - DG Admin</div>
+            <div class="small text-center">Copyright &copy; 2023 - Start Bootstrap</div>
             <div class="small text-center">Designed by <a href="https://startbootstrap.com/" style="">Start
-                    Bootstrap</a>. Modified by DG Admin</div>
+                    Bootstrap</a></div>
         </div>
     </footer>
     <!-- Bootstrap core JS-->

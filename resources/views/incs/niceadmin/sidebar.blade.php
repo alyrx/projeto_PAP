@@ -11,7 +11,7 @@
         <hr>
 
         <li class="nav-item">
-            <a class="nav-link @if(Route::currentRouteName() === 'horarios') @else collapsed @endif" href="{{ route('horarios') }}">
+            <a class="nav-link @if(Route::currentRouteName() === 'horarios') @else collapsed @endif disabled" href="{{ route('horarios') }}">
                 <i class="bi bi-calendar"></i>
                 <span>Horários</span>
             </a>
@@ -30,7 +30,7 @@
             <li class="nav-heading">Admin</li>
 
             <li class="nav-item">
-                <a class="nav-link @if(Route::currentRouteName() === 'horarios.admin') @else collapsed @endif" href="{{route('horarios.admin')}}">
+                <a class="nav-link @if(Route::currentRouteName() === 'horarios.admin') @else collapsed @endif disabled" href="{{route('horarios.admin')}}">
                     <i class="bi bi-calendar"></i>
                     <span>Horários (Admin)</span>
                 </a>
